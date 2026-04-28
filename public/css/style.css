@@ -10,6 +10,10 @@ h1 {
     margin: 1rem;
 }
 
+p {
+    margin: 0 1rem 1rem 1rem;
+}
+
 .cards {
     display: flex;
     align-items: center;
@@ -55,4 +59,21 @@ input[type="submit"] {
     border: none;
     padding: .375rem 1rem;
     margin-top: 10px;
+}
+
+.records-table {
+    width: calc(100% - 2rem);
+    margin: 0 1rem 1rem 1rem;
+    border-collapse: collapse;
+}
+
+.records-table th,
+.records-table td {
+    border: 1px solid lightgrey;
+    padding: 0.5rem 0.75rem;
+    text-align: left;
+}
+
+.records-table th {
+    background-color: #f5f5f5;
 }

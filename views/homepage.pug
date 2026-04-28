@@ -1,0 +1,24 @@
+doctype html
+html
+    head
+        title= `${title}`
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="/css/style.css")
+    body
+        h1 Custom Object Records
+        p
+            a(href="/update-cobj") Add to this table
+
+        if data.length
+            table.records-table
+                thead
+                    tr
+                        each propertyName in propertyNames
+                            th= propertyName
+                tbody
+                    each record in data
+                        tr
+                            each propertyName in propertyNames
+                                td= record.properties[propertyName] || 'N/A'
+        else
+            p No custom object records found.
