@@ -1,0 +1,21 @@
+doctype html
+html
+    head
+        title= `${title}`
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="/css/style.css")
+    body
+        h1 Create Custom Object Record
+        a(href="/") Back to homepage
+
+        form(action="/update-cobj" method="POST")
+            each propertyName in propertyNames
+                .form-row
+                    label(for=propertyName) #{propertyName}
+                    input(
+                        type="text"
+                        id=propertyName
+                        name=propertyName
+                        required
+                    )
+            button(type="submit") Create record

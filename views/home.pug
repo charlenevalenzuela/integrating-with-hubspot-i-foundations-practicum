@@ -1,0 +1,21 @@
+doctype html
+html
+    head
+        title= `${title}`
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="/css/style.css")
+    body
+        h1 Custom Object Records
+        a(href="/update-cobj") Create a new record
+
+        if data.length
+            .cards
+                each record in data
+                    .card
+                        h2.card__name Record #{record.id}
+                        each propertyName in propertyNames
+                            p
+                                strong #{propertyName}:
+                                |  #{record.properties[propertyName] || 'N/A'}
+        else
+            p No custom object records found.
